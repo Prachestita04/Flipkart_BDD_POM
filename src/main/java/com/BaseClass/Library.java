@@ -16,13 +16,14 @@ import java.util.Properties;
 public class Library {
     public static WebDriver driver;
     public static Properties prop;
+
     public void launchapplication() throws IOException {
         FileInputStream input = new FileInputStream("src/test/resources/Properties/Config.Property");
         prop = new Properties();
         prop.load(input);
 
-        try{
-            if(prop.getProperty("browser").equalsIgnoreCase("chrome")){
+        try {
+            if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             } else if (prop.getProperty("browser").equalsIgnoreCase("firefox")) {
@@ -41,7 +42,8 @@ public class Library {
             System.out.println("Browser didn't launch");
         }
     }
-    public void teardown(){
+
+    public void teardown() {
         driver.close();
     }
 }
