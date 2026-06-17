@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class SearchPage extends Library {
     SeleniumReusable se;
 
@@ -24,6 +26,10 @@ public class SearchPage extends Library {
     WebElement SearchResult;
     @FindBy(xpath = "//span[contains(text(),'✕')]")
     WebElement Popup;
+    @FindBy(xpath = "//div[contains(@class,'row')]//child::div[1][contains(@class,'col')]")
+    List<WebElement> EntireResult;
+    @FindBy(xpath = "(//div[contains(@class,'row')]//child::div[1][contains(@class,'col')])[3]")
+    WebElement ThirdResult;
 
     public void handlePopup() {
         se = new SeleniumReusable(driver);
@@ -46,6 +52,14 @@ public class SearchPage extends Library {
     public void result() {
         System.out.println(SearchResult.isDisplayed());
         System.out.println(driver.getTitle());
+    }
+
+    public void printEntireResult() {
+        se.multipleGettext(EntireResult);
+    }
+
+    public void print3rdResult() {
+        se.getValue(ThirdResult);
     }
 
 }

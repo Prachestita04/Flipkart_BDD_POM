@@ -46,11 +46,12 @@ public class SearchMobile_Testcase extends Library {
 
     @Then("Extract the Result and print it in console")
     public void extract_the_result_and_print_it_in_console() {
-
+        sp.printEntireResult();
+        System.out.println("**************************************************");
     }
 
     @Then("Print the Third result and print it in console")
     public void print_the_third_result_and_print_it_in_console() {
-
+        sp.print3rdResult();
     }
 }
