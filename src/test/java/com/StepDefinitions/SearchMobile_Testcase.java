@@ -43,4 +43,14 @@ public class SearchMobile_Testcase extends Library {
     public void it_should_navigate_to_the_search_result_page_and_display_the_relevant_details() {
         sp.result();
     }
+
+    @Then("Extract the Result and print it in console")
+    public void extract_the_result_and_print_it_in_console() {
+
+    }
+
+    @Then("Print the Third result and print it in console")
+    public void print_the_third_result_and_print_it_in_console() {
+
+    }
 }

@@ -9,3 +9,5 @@ Feature: To validate the Flipkart Application
     Given User enters the Text in the Search field
     When Click the Search button
     Then It should navigate to the search result page and display the relevant details
+    Then Extract the Result and print it in console
+    Then Print the Third result and print it in console
